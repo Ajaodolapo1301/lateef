@@ -35,7 +35,7 @@ class _MovieListState extends State<MovieList> {
                 getIt<NavigationService>().to(routeName: RootRoutes.favList);
               },
               child: Text(
-                "Fav",
+                "Favorites",
                 style: TextStyle(color: Colors.white),
               ),
             ))

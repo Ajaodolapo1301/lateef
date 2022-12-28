@@ -26,11 +26,7 @@ class FavItemWidget extends StatelessWidget {
             Container(
               height: 150.h,
               width: 150.w,
-              decoration: const BoxDecoration(color: Colors.grey
-                  // image: DecorationImage(image: NetworkImage(items[index].image!)
-
-                  // )
-                  ),
+              decoration: const BoxDecoration(color: Colors.grey),
               child: CachedNetworkImage(
                 imageUrl: movie.image!,
                 fit: BoxFit.cover,

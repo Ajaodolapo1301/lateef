@@ -30,7 +30,6 @@ class _FavoritesListState extends State<FavoritesList> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text("Favorites"),
       ),
