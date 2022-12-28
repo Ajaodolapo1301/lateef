@@ -1,16 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lateef/feature/home/cubit/movie_cubit.dart';
 
 import '../../../core/app_startup.dart';
 import '../../../core/navigation/navigation_service.dart';
 import '../../auth/model/movie_model.dart';
 import '../../root/route/routes.dart';
-import 'like_widget.dart';
 
-class MovieItemWidget extends StatelessWidget {
+class FavItemWidget extends StatelessWidget {
   final MovieModel movie;
-  const MovieItemWidget({Key? key, required this.movie}) : super(key: key);
+  const FavItemWidget({Key? key, required this.movie}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -72,21 +72,15 @@ class MovieItemWidget extends StatelessWidget {
                   SizedBox(
                     height: 20.0.h,
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.message_rounded,
-                        color: Colors.grey,
-                      ),
-                      SizedBox(
-                        width: 10.0.w,
-                      ),
-                      Text("2"),
-                      Spacer(),
-                      LikeWidget(
-                        movieModel: movie,
-                      )
-                    ],
+                  GestureDetector(
+                    onTap: () {
+                      getIt<MovieCubit>().delete(movie);
+                    },
+                    child: LabelWidget(
+                      text: "Delete",
+                      icon: Icons.delete,
+                      iconColor: Colors.white,
+                    ),
                   )
                 ],
               ),
@@ -102,16 +96,21 @@ class LabelWidget extends StatelessWidget {
   final String text;
   final IconData? icon;
   final Color? color;
+  final Color? iconColor;
   final Color? borderColor;
   const LabelWidget(
-      {Key? key, required this.text, this.icon, this.color, this.borderColor})
+      {Key? key,
+      required this.text,
+      this.icon,
+      this.color,
+      this.borderColor,
+      this.iconColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         height: 30.0.h,
-        // width: 70.0.w,
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         decoration: BoxDecoration(
             color: color ?? Colors.grey,
@@ -124,7 +123,10 @@ class LabelWidget extends StatelessWidget {
                 visible: icon != null,
                 child: Row(
                   children: [
-                    Icon(icon),
+                    Icon(
+                      icon,
+                      color: iconColor ?? Colors.grey,
+                    ),
                     SizedBox(
                       width: 5.w,
                     ),

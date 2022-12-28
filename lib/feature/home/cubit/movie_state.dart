@@ -16,3 +16,8 @@ class MovieError extends MovieState {
   final String message;
   MovieError({required this.message});
 }
+
+class FavouriteList extends MovieState {
+  final List<MovieModel> list;
+  FavouriteList({required this.list});
+}

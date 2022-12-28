@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../feature/auth/root.dart';
 import '../../feature/auth/route/route.dart';
 import '../../feature/home/widget/details.dart';
+import '../../feature/home/widget/fav.dart';
 import '../../feature/root/root.dart';
 import '../../feature/root/route/routes.dart';
 import '../../feature/root/splash_screen.dart';
@@ -35,6 +36,11 @@ var routes = (RouteSettings settings) {
         page: DetailsPage(
           movie: args["movie"],
         ),
+      );
+
+    case RootRoutes.favList:
+      return FadeRoute(
+        page: const FavoritesList(),
       );
   }
 
