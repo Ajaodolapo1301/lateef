@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "938636468521",
+    "project_id": "briskit-login",
+    "storage_bucket": "briskit-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938636468521:android:271f163895e286bdc5d738",
+        "android_client_info": {
+          "package_name": "com.example.briskit_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938636468521-m6r9729kjsephqveodhao917v5vtd7p7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWqCToxiH6yfCBP9SJVp2Dic6fA8ZE4Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938636468521-m6r9729kjsephqveodhao917v5vtd7p7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
